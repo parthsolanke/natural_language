@@ -17,9 +17,10 @@ V -> "smiled" | "tell" | "were"
 
 # non-terminals are the words used to define the grammer rules
 NONTERMINALS = """
-S -> NP VP | VP NP | S Conj S
+S -> NP VP | VP NP | S Conj S | NP VP Conj VP
 PP -> P NP
 AP -> Adj | Adj AP
-NP -> N | Det N | NP PP | Det AP N
-VP -> V | Adv V | V Adv | V NP | V PP | Adv VP | VP Adv
+NP -> N | Det N | NP PP | Det AP N | AP NP | Det NP
+PP -> P NP | P S
+VP -> V | Adv V | V Adv | V NP | V PP | Adv VP | VP Adv | V NP PP |
 """
