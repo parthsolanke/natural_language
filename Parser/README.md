@@ -1,42 +1,42 @@
 # Output Parser
 <pre>
-Sentence: Holmes sat and lit his pipe<br/>
-                S<br/>
-         _______|________<br/>
-        S       |        S<br/>
-   _____|___    |     ___|___<br/>
-  NP        VP  |    VP      NP<br/>
-  |         |   |    |    ___|___<br/>
-  N         V  Conj  V  Det      N<br/>
-  |         |   |    |   |       |<br/>
-holmes     sat and  lit his     pipe<br/>
+Sentence: Holmes sat and lit his pipe
+                S
+         _______|________
+        S       |        S
+   _____|___    |     ___|___
+  NP        VP  |    VP      NP
+  |         |   |    |    ___|___
+  N         V  Conj  V  Det      N
+  |         |   |    |   |       |
+holmes     sat and  lit his     pipe
 
-Noun Phrase Chunks<br/>
-holmes<br/>
-his pipe<br/>
+Noun Phrase Chunks
+holmes
+his pipe
 
-Sentence: I had a little moist red paint in the palm of my hand<br/>
-              S<br/>
-  ____________|____________________<br/>
- |                                 VP<br/>
- |    _____________________________|____<br/>
- |   |                                  NP<br/>
- |   |                __________________|___________<br/>
- |   |               NP                             PP<br/>
- |   |    ___________|_____________      ___________|____<br/>
- |   |   |           AP            |    |                NP<br/>
- |   |   |     ______|____         |    |        ________|___<br/>
- |   |   |    |           AP       |    |       |            PP<br/>
- |   |   |    |       ____|___     |    |       |         ___|___<br/>
- NP  |   |    |      |        AP   |    |       NP       |       NP<br/>
- |   |   |    |      |        |    |    |    ___|___     |    ___|___<br/>
- N   V  Det  Adj    Adj      Adj   N    P  Det      N    P  Det      N<br/>
- |   |   |    |      |        |    |    |   |       |    |   |       |<br/>
- i  had  a  little moist     red paint  in the     palm  of  my     hand<br/>
+Sentence: I had a little moist red paint in the palm of my hand
+              S
+  ____________|____________________
+ |                                 VP
+ |    _____________________________|____
+ |   |                                  NP
+ |   |                __________________|___________
+ |   |               NP                             PP
+ |   |    ___________|_____________      ___________|____
+ |   |   |           AP            |    |                NP
+ |   |   |     ______|____         |    |        ________|___
+ |   |   |    |           AP       |    |       |            PP
+ |   |   |    |       ____|___     |    |       |         ___|___
+ NP  |   |    |      |        AP   |    |       NP       |       NP
+ |   |   |    |      |        |    |    |    ___|___     |    ___|___
+ N   V  Det  Adj    Adj      Adj   N    P  Det      N    P  Det      N
+ |   |   |    |      |        |    |    |   |       |    |   |       |
+ i  had  a  little moist     red paint  in the     palm  of  my     hand
 
-Noun Phrase Chunks<br/>
-i<br/>
-a little moist red paint<br/>
-the palm<br/>
-my hand<br/>
+Noun Phrase Chunks
+i
+a little moist red paint
+the palm
+my hand
 <pre/>
