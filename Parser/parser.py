@@ -44,10 +44,12 @@ def main():
 
 def preprocess(sentence):
     words = []
+    
     for word in sentence.split():
         # isalpha() checks if the word contains alphabets
         if word.isalpha():
             words.append(word.lower())
+            
     return words
 
 
@@ -59,7 +61,8 @@ def np_chunk(tree):
     for subtree in tree.subtrees():
         if subtree.label() == "NP":
             if not list(subtree.subtrees(lambda t: t.label() == "NP" and t != subtree)):
-                np_chunks.append(subtree)         
+                np_chunks.append(subtree)
+                        
     return np_chunks
 
 
