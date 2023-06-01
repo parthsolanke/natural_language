@@ -1,24 +1,11 @@
 import nltk
 import sys
+import grammar as g
 
-TERMINALS = """
-Adj -> "country" | "dreadful" | "enigmatical" | "little" | "moist" | "red"
-Adv -> "down" | "here" | "never"
-Conj -> "and" | "until"
-Det -> "a" | "an" | "his" | "my" | "the"
-N -> "armchair" | "companion" | "day" | "door" | "hand" | "he" | "himself"
-N -> "holmes" | "home" | "i" | "mess" | "paint" | "palm" | "pipe" | "she"
-N -> "smile" | "thursday" | "walk" | "we" | "word"
-P -> "at" | "before" | "in" | "of" | "on" | "to"
-V -> "arrived" | "came" | "chuckled" | "had" | "lit" | "said" | "sat"
-V -> "smiled" | "tell" | "were"
-"""
+# creating a grammer object to read from the string of grammer rules 
+grammar = nltk.CFG.fromstring(g.NONTERMINALS + g.TERMINALS)
 
-NONTERMINALS = """
-S -> N V
-"""
-
-grammar = nltk.CFG.fromstring(NONTERMINALS + TERMINALS)
+# creating a parser variable to save and parse the grammer
 parser = nltk.ChartParser(grammar)
 
 
@@ -56,13 +43,12 @@ def main():
 
 
 def preprocess(sentence):
-    """
-    Convert `sentence` to a list of its words.
-    Pre-process sentence by converting all characters to lowercase
-    and removing any word that does not contain at least one alphabetic
-    character.
-    """
-    raise NotImplementedError
+    words = []
+    for word in sentence.split():
+        # isalpha() checks if the word contains alphabets
+        if word.isalpha():
+            words.append(word.lower())
+    return words
 
 
 def np_chunk(tree):
@@ -72,7 +58,11 @@ def np_chunk(tree):
     whose label is "NP" that does not itself contain any other
     noun phrases as subtrees.
     """
-    raise NotImplementedError
+    np_chunks = []
+    for subtree in tree.subtrees():
+        if subtree.label() == "NP":
+            np_chunks.append(subtree)         
+    return np_chunks
 
 
 if __name__ == "__main__":
