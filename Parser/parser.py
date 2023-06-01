@@ -52,16 +52,11 @@ def preprocess(sentence):
 
 
 def np_chunk(tree):
-    """
-    Return a list of all noun phrase chunks in the sentence tree.
-    A noun phrase chunk is defined as any subtree of the sentence
-    whose label is "NP" that does not itself contain any other
-    noun phrases as subtrees.
-    """
     np_chunks = []
     for subtree in tree.subtrees():
         if subtree.label() == "NP":
-            np_chunks.append(subtree)         
+            if not list(subtree.subtrees(lambda t: t.label() == "NP" and t != subtree)):
+                np_chunks.append(subtree)         
     return np_chunks
 
 
