@@ -1,6 +1,6 @@
 # Output Parser
 
-Sentence: Holmes sat and lit his pipe</d>
+Sentence: Holmes sat and lit his pipe<br\>
                 S
          _______|________
         S       |        S
