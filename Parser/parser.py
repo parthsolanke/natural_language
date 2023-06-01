@@ -52,7 +52,10 @@ def preprocess(sentence):
 
 
 def np_chunk(tree):
+    # creating a list to store the noun phrases
     np_chunks = []
+    
+    # iterating through the subtrees of the tree
     for subtree in tree.subtrees():
         if subtree.label() == "NP":
             if not list(subtree.subtrees(lambda t: t.label() == "NP" and t != subtree)):
