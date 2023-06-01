@@ -1,5 +1,5 @@
 # Output Parser
-
+<pre>
 Sentence: Holmes sat and lit his pipe<br/>
                 S<br/>
          _______|________<br/>
@@ -39,3 +39,4 @@ i<br/>
 a little moist red paint<br/>
 the palm<br/>
 my hand<br/>
+<pre/>
