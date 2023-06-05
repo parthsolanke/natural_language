@@ -4,7 +4,7 @@ import os
 import string
 import math
 
-FILE_MATCHES = 4
+FILE_MATCHES = 2
 SENTENCE_MATCHES = 1
 
 
@@ -109,20 +109,20 @@ def top_files(query, files, idfs, n):
 
 
 def top_sentences(query, sentences, idfs, n):
-    # calculating tf-idf for each sentence
-    tf_idf = {}
+    # calculating idf for each sentence
+    idf = {}
     
     # calculating tf-idf for each sentence
     for sentence in sentences:
-        tf_idf[sentence] = 0
+        idf[sentence] = 0
         for word in query:
             if word in sentences[sentence]:
-                tf_idf[sentence] += idfs[word]
+                idf[sentence] += idfs[word]
         query_term_density = sum([1 for word in query if word in sentences[sentence]]) / len(sentences[sentence])
-        tf_idf[sentence] = (tf_idf[sentence], query_term_density)
+        idf[sentence] = (idf[sentence], query_term_density)
         
-    # sorting the sentences according to tf-idf
-    sorted_sentences = sorted(tf_idf, key=lambda x: (tf_idf[x][0], tf_idf[x][1]), reverse=True)
+    # sorting the sentences according to idf
+    sorted_sentences = sorted(idf, key=lambda x: (idf[x][0], idf[x][1]), reverse=True)
     
     return sorted_sentences[:n]
 
